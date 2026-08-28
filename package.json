@@ -38,8 +38,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/ProgrammerAditya36/strapi-service-navigation.git"
+    "url": "https://github.com/AdityaAmitK/strapi-service-navigation.git"
+  },
+  "homepage": "https://github.com/AdityaAmitK/strapi-service-navigation#readme",
+  "bugs": {
+    "url": "https://github.com/AdityaAmitK/strapi-service-navigation/issues"
   },
   "license": "MIT"
 }
-
