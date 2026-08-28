@@ -3,6 +3,7 @@ const path = require('path');
 const fs = require('fs');
 
 const SUPPORTED_SCRIPT_EXTENSIONS = ['.js', '.ts', '.jsx', '.tsx'];
+const SUPPORTED_LANGUAGES = ['javascript', 'javascriptreact', 'typescript', 'typescriptreact'];
 
 /**
  * Activates the extension
@@ -11,10 +12,10 @@ const SUPPORTED_SCRIPT_EXTENSIONS = ['.js', '.ts', '.jsx', '.tsx'];
 function activate(context) {
   console.log('Strapi Service Navigation extension is now active!');
 
-  // Register definition provider for JavaScript files
+  // Register the provider for every script type Strapi projects commonly use.
   const provider = new StrapiServiceDefinitionProvider();
   const disposable = vscode.languages.registerDefinitionProvider(
-    { scheme: 'file', language: 'javascript' },
+    SUPPORTED_LANGUAGES.map(language => ({ scheme: 'file', language })),
     provider
   );
 
@@ -505,4 +506,3 @@ module.exports = {
   activate,
   deactivate
 };
-
